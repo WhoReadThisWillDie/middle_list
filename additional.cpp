@@ -1,12 +1,12 @@
 #include "middle_list.h"
 
-void print_vector(vector <int> &mass)
+void print_vector(vector <int>& mass)
 {
-	if (mass.size() > 0) {
-		for (int i = 0; i < mass.size(); i++) {
-			cout << mass[i] << " ";
-		}
-	}
+    if (mass.size() > 0) {
+        for (int i = 0; i < mass.size(); i++) {
+            cout << mass[i] << " ";
+        }
+    }
 }
 
 int itc_len(string str)
@@ -18,43 +18,32 @@ int itc_len(string str)
     return res;
 }
 
-int itc_find_str(string str1, string str2)
+int even_count(const vector <int>& lst)
 {
-    int num = 0;
-    int count_num = 0;
-    int res_num = 0;
-    for (int i = 0; i < itc_len(str1); i++) {
-        if (str1[i] == str2[num]) {
-            if (num == 0)
-                res_num = i;
-            num++;
-            count_num++;
-            if (count_num == itc_len(str2))
-                return res_num;
-        }
-        else {
-            num = 0;
-            count_num = 0;
-        }
+    int res = 0;
+    for (int i = 0; i < lst.size(); i++) {
+        if (lst[i] % 2 == 0)
+            res++;
     }
-    return -1;
+    return res;
 }
 
-string itc_slice_str(string str, int start, int end)
+int max_even(const vector <int>& lst)
 {
-    string res_str = "";
-    if (start > end) {
-        return str;
+    int res = 0;
+    for (int i = 0; i < lst.size(); i++) {
+        if (lst[i] % 2 == 0 && res < lst[i])
+            res = lst[i];
     }
-    if (end <= itc_len(str)) {
-        for (int i = start; i <= end; i++) {
-            res_str += str[i];
-        }
+    return res;
+}
+
+int min_even(const vector <int>& lst)
+{
+    int res = 2147483647;
+    for (int i = 0; i < lst.size(); i++) {
+        if (lst[i] % 2 == 0 && res > lst[i])
+            res = lst[i];
     }
-    else {
-        for (int i = start; i < itc_len(str); i++) {
-            res_str += str[i];
-        }
-    }
-    return res_str;
+    return res;
 }

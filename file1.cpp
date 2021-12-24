@@ -30,18 +30,29 @@ string itc_rmstrspc(string str)
     return res;
 }
 
-string itc_rmstrchar(string str, string less) // dont works
+string itc_rmstrchar(string str, string less)
 {
-    string res;
-    while (itc_find_str(str, less) != -1) {
-        cout << itc_find_str(str, less) << endl;
-        res += itc_slice_str(str, itc_find_str(str, less), itc_len(less) + itc_find_str(str, less));
-        str = res;
+    string res = "";
+    int k = 0;
+    int len = itc_len(less);
+    if (itc_len(str) < len)
+        return str;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == less[k]) {
+            if (len > 1 && k < len - 1)
+                k++;
+            else if (k >= len - 1)
+                k = 0;
+        }
+        else {
+            k = 0;
+            res += str[i];
+        }
     }
     return res;
 }
 
-long itc_sumlst(const vector <int> &lst)
+long itc_sumlst(const vector <int>& lst)
 {
     int res = 0;
     for (int i = 0; i < lst.size(); i++) {
