@@ -47,9 +47,9 @@ void itc_odd_even_analysis_lst(const vector <int>& lst)
     setlocale(LC_ALL, "Russian");
     cout << "Анализ списка: " << endl
         << "Количество четных чисел: " << even_count(lst) << "      Количество нечетных чисел: " << odd_count(lst) << endl
-        << "Максимальная четная цифра: " << max_even(lst) << "    Максимальная нечетная цифра: " << max_odd(lst) << endl
-        << "Минимальная четная цифра: " << min_even(lst) << "     Минимальная нечетная цифра: " << min_odd(lst) << endl
-        << "Сумма четных чисел: " << itc_sum_even_part_lst(lst) << "          Сумма нечетных чисел: " << sum_odd(lst);
+        << "Максимальная четная цифра: " << max_even(lst) << "      Максимальная нечетная цифра: " << max_odd(lst) << endl
+        << "Минимальная четная цифра: " << min_even(lst) << "       Минимальная нечетная цифра: " << min_odd(lst) << endl
+        << "Сумма четных чисел: " << itc_sum_even_part_lst(lst) << "        Сумма нечетных чисел: " << sum_odd(lst);
 
 
 }
